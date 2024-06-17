@@ -1,0 +1,456 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+@font-face {
+    font-family: 'garet';
+    src: url(../fonts/Garet/Garet-Book.otf);
+}
+
+/* Borrar despues */
+.space {
+    height: 50rem;
+}
+
+/* Borrar despues */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e2e2e2;
+    width: 100%;
+    height: 100%;
+    font-family: 'garet';
+    /* display: flex;
+    align-items: center; */
+    /* font-family: "Roboto", sans-serif; */
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Inicio menu pantallas chicas  */
+.hamburguer {
+    color: white;
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: none;
+    cursor: pointer;
+}
+
+/* Fin menu pantallas chicas */
+
+/* Inicio nav */
+.main-navigation {
+    display: flex;
+    width: 100%;
+}
+
+.main-menu {
+    margin: auto;
+    display: flex;
+    justify-items: flex-end;
+    flex: 1;
+}
+
+.site-logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.site-logo h1 {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 15px 10px 15px;
+    border-bottom: 3px solid transparent;
+    transition: all .5s;
+    text-shadow: -1px -1px 0 #303030, 1px -1px 0 #303030, -1px 1px 0 #303030, 1px 1px #303030;
+}
+
+li a:hover {
+    border-bottom-color: #0051ff;
+}
+
+.nav-list li {
+    padding: 15px;
+    list-style: none;
+}
+
+/* Fin nav */
+
+/* Inicio de Header y scroll */
+#header {
+    position: fixed;
+    width: 100%;
+    padding: 10px 15px 10px 20px;
+    background-color: rgba(41, 41, 41, 0);
+    border-radius: 0 0 10px 10px;
+    font-size: 1.3rem;
+    transition: background-color 1s ease;
+    z-index: 2;
+}
+
+#header.scrolled {
+    background-color: rgba(26, 26, 26, 0.9);
+    /* backdrop-filter: blur(10px); */
+}
+
+/* Fin de Header y scroll */
+
+/* Inicio del banner */
+#banner-conteiner {
+    cursor: default;
+    position: relative;
+    width: 100%;
+    height: 650px;
+    background-image: url(../img/banner2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    mask-image: linear-gradient(#000 90%, transparent);
+    z-index: 1;
+    filter: saturate(1.5);
+    /* filter: blur(5px); */
+}
+
+#banner-conteiner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 52, 77, 0.5);
+    /* background-color: rgba(0, 90, 139, 0.5); no va */
+    z-index: 1;
+    transition: all 1s;
+}
+
+#banner-conteiner.scroll-banner::after {
+    background-color: rgba(0, 52, 77, 0.7);
+}
+
+/* Fin del banner */
+
+/* Inicio contenido dentro del banner */
+.principal-info {
+    text-shadow: -1px -1px 0 #303030, 1px -1px 0 #303030, -1px 1px 0 #303030, 1px 1px #303030;
+    position: absolute;
+    color: white;
+    z-index: 2;
+    margin: 0;
+    width: 100%;
+    top: 35%;
+    font-size: 2rem;
+    align-items: center;
+    text-align: center;
+    transition: top .3s;
+}
+
+.principal-info h4 {
+    margin: 20px 15px 15px 15px;
+}
+
+.buttom {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.boton-scroll {
+    margin-top: 100px;
+    transition: all .3s;
+    z-index: 3;
+    width: auto
+}
+
+.boton-scroll:hover {
+    transform: scale(1.2);
+}
+
+.boton-scroll span {
+    color: white;
+    font-size: 1.5rem;
+    padding: 5px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    transition: all .3s;
+}
+
+
+.boton-scroll span:hover {
+    background-color: #006fa4;
+    border-color: #006fa4;
+}
+
+/* Fin contenido dentro del banner */
+
+/* Inicio del divisor */
+.divisor {
+    cursor: default;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.top-info {
+    font-weight: bold;
+    margin-top: 140px;
+    font-size: 1.8rem;
+    justify-content: center;
+    width: 70%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    color: #0f3c77;
+    transition: all .8s;
+}
+
+.top-info::before,
+.top-info::after {
+    content: '';
+    flex: 1;
+    border-bottom: #0f3c77 3px solid;
+}
+
+.top-info:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.top-info:not(:empty)::after {
+    margin-left: .25em;
+}
+
+.top-info:hover {
+    width: 50%;
+}
+
+/* Fin del divisor */
+
+/* Inicio apartado Nosotros */
+.nosotros {
+    margin-top: -80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.information-nosotros {
+    cursor: default;
+    display: flex;
+    width: 100%;
+    margin: 50px 0 60px 0;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all .3s;
+}
+
+.content-info {
+    color: white;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: auto;
+    text-align: center;
+    border-radius: 20px;
+    margin: 15px;
+    padding: 15px;
+    border: rgba(1, 121, 179, .2) 1px solid;
+    background: rgb(1, 121, 179);
+    transition: all .5s;
+    background: linear-gradient(45deg, rgba(1, 121, 179, 1) 0%, rgba(0, 146, 216, 1) 75%, rgba(1, 173, 255, 1) 100%);
+    box-shadow: 0px 0px 100px 20px rgba(0, 0, 0, 0.3);
+}
+
+.content-info:hover {
+    transform: scale(1.05);
+}
+
+.body.info p {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.encabezado {
+    max-width: 100%;
+    padding-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+/* Fin apartado Nosotros */
+
+/* Inicio apartado Orientacion */
+.orientacion {
+    cursor: default;
+    margin-top: -80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.information-orientacion {
+    display: flex;
+    width: 100%;
+    padding-top: 143px;
+    margin-top: -103px;
+    background: rgb(0, 146, 216);
+    background: radial-gradient(circle, rgba(0, 146, 216, 1) 0%, rgba(0, 111, 164, 1) 100%);
+}
+
+.target {
+    background-color: #e2e2e2;
+    display: flex;
+    width: 100%;
+    margin: 20px 40px 120px 40px;
+    padding: 25px;
+    align-items: center;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: inset 0px 0px 50px 0px rgba(0, 0, 0, 0.5);
+    transition: all .5s;
+}
+
+.img-orientacion {
+    display: flex;
+}
+
+.img-orientacion img {
+    max-height: 400px;
+    border-radius: 15px;
+}
+
+.target:hover {
+    transform: scale(.98);
+}
+
+.target h2 {
+    text-align: start;
+    padding: 0 20px 20px 20px;
+    width: 100%;
+    font-size: 2rem;
+    margin-right: 25px;
+}
+
+.target p {
+    font-size: 1.4rem;
+    text-align: start;
+}
+
+.info {
+    margin: 25px;
+}
+
+/* Fin apartado Orientacion */
+
+/**/
+.noticias .divisor{
+    margin-bottom: 60px;
+}
+
+.noticias {
+    margin-top: -79px;
+    overflow: hidden;
+}
+
+/* Inicio de Carrusel */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform .5s ease-in-out;
+}
+
+.gallery-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: inline;
+}
+
+.target-item {
+    cursor: default;
+    box-shadow: 0px 25px 25px 15px rgba(0,0,0,0.1);
+    border: 1px #36c1fa solid;
+    width: 65%;
+    border-radius: 2rem;
+    margin: auto;
+    display: flex;
+    text-align: start;
+    transition: all .5s ease;
+    background: rgb(0,146,216);
+    background: radial-gradient(circle, rgba(0,146,216,1) 0%, rgba(0,172,200,1) 100%);
+}
+
+.target-item:hover {
+    transform: scale(1.05);
+}
+
+.target-item h3 {
+    font-size: 2rem;
+    padding: 25px;
+}
+
+.target-item p {
+    padding: 0 25px 25px;
+    font-size: 1.3rem;
+}
+
+.gallery-item img {
+    border-radius: 20px;
+    margin: auto 25px auto auto;
+    display: block;
+    max-height: 250px;
+    width: auto;
+    object-fit: cover;
+}
+
+.gallery-navigation {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -244.5px;
+    margin: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.nav-button {
+    background-color: #0caaeb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.nav-button:hover {
+    background-color: #0092d8;
+}
+/* Fin de Carrusel */
+
